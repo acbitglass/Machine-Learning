@@ -159,13 +159,10 @@ def correct_colours(im1, im2, landmarks1):
 
     return (im2.astype(numpy.float64) * im1_blur.astype(numpy.float64) /
             im2_blur.astype(numpy.float64))
+  
 
-
-im1, landmarks1 = read_im_and_landmarks(sys.argv[1])
-im2, landmarks2 = read_im_and_landmarks(sys.argv[2])
-
-# im1, landmarks1 = read_im_and_landmarks('donald_trump.jpg')
-# im2, landmarks2 = read_im_and_landmarks('ted_cruz.jpg')
+im1, landmarks1 = read_im_and_landmarks('donald_trump.jpg')
+im2, landmarks2 = read_im_and_landmarks('ted_cruz.jpg')
 
 M = transformation_from_points(landmarks1[ALIGN_POINTS],
                                landmarks2[ALIGN_POINTS])
